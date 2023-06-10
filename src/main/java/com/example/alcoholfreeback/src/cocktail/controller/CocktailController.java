@@ -33,9 +33,11 @@ public class CocktailController {
             value = "태그와 재료를 기반으로 칵테일 조회",
             notes = "선택한 태그와 재료의 이름을 포함하는 칵테일 조회"
     )
-    @PostMapping("/search")
-    public BaseResponse<List<CocktailDto>> getCocktailsByCond(@RequestBody CocktailSearchCond cond) {
-        return new BaseResponse<>(cocktailService.getCocktailByCond(cond));
+    @GetMapping("/search")
+    public BaseResponse<List<CocktailDto>> getCocktailsByCond(@RequestParam(value = "keyword",defaultValue = "") String keyword,
+                                                              @RequestParam(value = "tag",defaultValue = "") String tag,
+                                                              @RequestParam(value = "ingredient",defaultValue = "") String ingredient) {
+        return new BaseResponse<>(cocktailService.getCocktailByCond(new CocktailSearchCond(keyword, tag, ingredient)));
     }
 
     @ApiOperation(

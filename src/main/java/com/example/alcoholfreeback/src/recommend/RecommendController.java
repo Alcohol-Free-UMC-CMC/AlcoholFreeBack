@@ -55,8 +55,8 @@ public class RecommendController {
     }
 
     @ApiOperation(
-            value = "chatAPI를 추천 받은 칵테일 리스트 반환",
-            notes = "chatAPI를 추천 받은 칵테일 리스트 반환"
+            value = "chatAPI를 추천 받은 칵테일 찜목록 반환",
+            notes = "chatAPI를 추천 받은 칵테일 찜목록 반환"
     )
     @PostMapping("app/recommend/like")
     public BaseResponse<List<RecommendDto>> getMyRecommends(@RequestBody MyRecommendDto myRecommendDto) {
