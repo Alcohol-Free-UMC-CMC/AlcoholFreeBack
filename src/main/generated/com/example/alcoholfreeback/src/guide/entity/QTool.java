@@ -1,4 +1,4 @@
-package com.example.alcoholfreeback.src.tool.entity;
+package com.example.alcoholfreeback.src.guide.entity;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -15,7 +15,7 @@ import com.querydsl.core.types.Path;
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QTool extends EntityPathBase<Tool> {
 
-    private static final long serialVersionUID = 444411669L;
+    private static final long serialVersionUID = 985016425L;
 
     public static final QTool tool = new QTool("tool");
 
@@ -27,6 +27,10 @@ public class QTool extends EntityPathBase<Tool> {
     public final StringPath description = createString("description");
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public final StringPath imgUrl = createString("imgUrl");
+
+    public final StringPath name = createString("name");
 
     //inherited
     public final EnumPath<com.example.alcoholfreeback.common.entity.BaseEntity.State> state = _super.state;

@@ -20,16 +20,16 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("v1.amachon.domain"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.alcoholfreeback"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("아마촌 API")
+                .title("알콜프리 API")
                 .version("1.0")
-                .description("아마촌의 API 명세서입니다.")
+                .description("알콜프리 API 명세서입니다.")
                 .build();
     }
 }
