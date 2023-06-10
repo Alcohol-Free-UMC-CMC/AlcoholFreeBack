@@ -1,9 +1,13 @@
 package com.example.alcoholfreeback.src.recommend;
 
+import com.example.alcoholfreeback.common.exceptions.BaseException;
+import com.example.alcoholfreeback.common.response.BaseResponseStatus;
 import com.example.alcoholfreeback.src.recommend.entity.Recommend;
+import com.example.alcoholfreeback.src.recommend.model.MyRecommendDto;
 import com.example.alcoholfreeback.src.recommend.model.PostRecommendReq;
 import com.example.alcoholfreeback.src.recommend.model.PostRecommendRes;
 
+import com.example.alcoholfreeback.src.recommend.model.RecommendDto;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -99,7 +106,27 @@ public class RecommendService {
                 connection.disconnect();
             }
         }
-
     }
 
+    public List<RecommendDto> getRecommendRecipes() {
+        List<Recommend> recipes = recommendRepository.findAll();
+        if (recipes == null || recipes.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return recipes.stream().map(RecommendDto::new).collect(Collectors.toList());
+    }
+
+    public List<RecommendDto> getMyRecommends(MyRecommendDto myRecommendDto) {
+        List<Recommend> recommends = recommendRepository.findAllById(myRecommendDto.getRecommendIds());
+        if (recommends == null || recommends.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return recommends.stream().map(RecommendDto::new).collect(Collectors.toList());
+    }
+
+    public PostRecommendRes getRecommend(Long id) {
+        Recommend recommend = recommendRepository.findById(id).orElseThrow(
+                () -> new BaseException(BaseResponseStatus.SERVER_ERROR));
+        return new PostRecommendRes(recommend);
+    }
 }
