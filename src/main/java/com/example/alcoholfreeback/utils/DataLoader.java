@@ -176,6 +176,270 @@ public class DataLoader implements ApplicationRunner {
         ingredientCocktailRepository.save(new IngredientCocktail(소다수, 프룻쿨러, "1/2컵"));
         ingredientCocktailRepository.save(new IngredientCocktail(크랜베리주스, 프룻쿨러, "1/2컵"));
         ingredientCocktailRepository.save(new IngredientCocktail(얼음, 프룻쿨러, "1컵"));
+
+        Cocktail 스파이시_워터멜론_민트_아구아_프레스카 = new Cocktail("스파이시 워터멜론 민트 아구아 프레스카", "스파이시 워터멜론 민트 아구아 프레스카는 수박의 자연스러운 단맛과 민트의 시원함, 약간의 향신료가 어우러진 상쾌하고 상쾌한 음료입니다. 과즙이 풍부한 수박이 상쾌한 베이스를 제공하고 민트가 상쾌하고 향긋한 향을 더하는 완벽한 균형의 맛입니다. 카이엔 고추 또는 칠리 파우더의 미묘한 향신료가 음료에 유쾌한 열 요소를 추가합니다. 수분을 공급하고 풍미가 가득한 생동감 있고 갈증을 해소하는 음료입니다. 더운 날 또는 클래식한 아구아 프레스카에 독특한 트위스트로 즐겨보세요.", "1. 믹서기에 수박 큐브, 라임 주스, 신선한 민트 잎, 아가베 시럽 또는 꿀, 카이엔 고추 또는 칠리 파우더를 섞습니다.\n" +
+                "2. 부드럽고 잘 섞일 때까지 사용합니다.\n" +
+                "3. 혼합물을 맛보고 아가베 시럽/꿀 또는 고춧가루/칠리 파우더를 더 추가하여 기호에 따라 단맛 또는 매운맛을 조절하십시오.\n" +
+                "4. 혼합물을 고운 체에 거르고 과육이나 씨를 제거합니다.\n" +
+                "5. 거른 액체를 투수에 옮깁니다.\n" +
+                "6. 서빙 잔에 얼음을 채웁니다.\n" +
+                "7. 스파이시 워터멜론 민트 아구아 프레스카를 각 잔의 얼음 위에 붓습니다.\n" +
+                "8. 신선한 민트 잎과 웨지 수박으로 장식합니다.\n" +
+                "9. 부드럽게 저은 후 바로 서빙합니다.\n" +
+                "10. 스파이시 수박 민트 아구아 프레스카의 상큼하고 매콤한 맛을 즐겨보세요!", "https://i.imgur.com/hiu6WH3.jpg");
+        cocktailRepository.save(스파이시_워터멜론_민트_아구아_프레스카);
+        Tag 매운 = new Tag("매운");
+        Tag 상큼한 = new Tag("상큼한");
+        Ingredient 수박 = new Ingredient("수박");
+        Ingredient 라임_주스 = new Ingredient("라임 주스");
+        Ingredient 민트_잎 = new Ingredient("민트 잎");
+        Ingredient 할라피뇨 = new Ingredient("할라피뇨");
+        tagRepository.save(매운);
+        tagRepository.save(상큼한);
+        ingredientRepository.save(수박);
+        ingredientRepository.save(라임_주스);
+        ingredientRepository.save(민트_잎);
+        ingredientRepository.save(할라피뇨);
+        cocktailTagRepository.save(new CocktailTag(스파이시_워터멜론_민트_아구아_프레스카, 매운));
+        cocktailTagRepository.save(new CocktailTag(스파이시_워터멜론_민트_아구아_프레스카, 상큼한));
+        ingredientCocktailRepository.save(new IngredientCocktail(수박, 스파이시_워터멜론_민트_아구아_프레스카, "4컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라임_주스, 스파이시_워터멜론_민트_아구아_프레스카, "1/4컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(꿀, 스파이시_워터멜론_민트_아구아_프레스카, "꿀2큰술"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 스파이시_워터멜론_민트_아구아_프레스카, "적당량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(할라피뇨, 스파이시_워터멜론_민트_아구아_프레스카, "기호에 맞게"));
+
+        Cocktail 망고뮬 = new Cocktail("망고뮬", "Mango Mule은 고전적인 Moscow Mule 칵테일의 유쾌하고 열대적인 변종입니다. 망고의 달콤함과 진저 비어의 스파이시함, 라임의 톡 쏘는 맛이 균형을 이룬 생동감 넘치는 트로피컬 칵테일입니다. 칵테일에서 과일 향과 약간 매운 맛을 즐기는 사람들을 위한 상쾌한 선택입니다. Mango Mule의 열대 지방의 장점을 음미하십시오!", "1. 칵테일 셰이커 또는 믹싱 글라스에 망고 퓨레 또는 주스, 보드카, 라임 주스를 섞습니다.\n" +
+                "2. 재료가 잘 섞이도록 잘 흔들어 주세요.\n" +
+                "3. 구리 머그나 하이볼 잔에 얼음을 채웁니다.\n" +
+                "4. 망고 혼합물을 얼음 위에 걸러 유리잔에 따릅니다.\n" +
+                "5. 진저비어를 위에 올려 장식할 공간을 남겨둡니다.\n" +
+                "6. 맛이 잘 섞이도록 칵테일을 부드럽게 저어줍니다.\n" +
+                "7. 선택적으로 시각적 매력을 더하기 위해 신선한 망고 슬라이스, 라임 휠 또는 민트 잔가지로 장식합니다.", "https://i.imgur.com/Ez9ziEc.jpg");
+        cocktailRepository.save(망고뮬);
+        Tag 달콤한 = new Tag("달콤한");
+        tagRepository.save(달콤한);
+        Ingredient 오이_슬라이스 = new Ingredient("오이 슬라이스");
+        Ingredient 망고_주스 = new Ingredient("망고 주스");
+        Ingredient 진저비어 = new Ingredient("진저비어");
+        Ingredient 장식용_망고_슬라이스 = new Ingredient("장식용 망고 슬라이스");
+        ingredientRepository.save(오이_슬라이스);
+        ingredientRepository.save(망고_주스);
+        ingredientRepository.save(진저비어);
+        ingredientRepository.save(장식용_망고_슬라이스);
+
+        cocktailTagRepository.save(new CocktailTag(망고뮬, 달콤한));
+        ingredientCocktailRepository.save(new IngredientCocktail(오이_슬라이스, 망고뮬, "4개"));
+        ingredientCocktailRepository.save(new IngredientCocktail(꿀, 망고뮬, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라임_주스, 망고뮬, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(망고_주스, 망고뮬, "2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 망고뮬, "적당량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(장식용_망고_슬라이스, 망고뮬, "1개"));
+
+        Cocktail 시트러스_피즈 = new Cocktail("시트러스 피즈", "감귤류 과일의 생동감 있는 향과 탄산수 또는 클럽 소다의 기포가 결합된 상쾌하고 거품이 많은 칵테일입니다. 감귤류의 생동감 넘치는 풍미를 보여주는 상쾌하고 톡 쏘는 듯한 칵테일입니다. 거품이 일고 단맛과 신맛의 균형 잡힌 조합은 활력을 주고 풍미가 풍부한 음료를 찾는 사람들에게 탁월한 선택입니다. Citrus Fizz를 따뜻한 날 상쾌한 간식으로 즐기거나 칵테일 행사를 위한 활기 넘치는 옵션으로 즐겨보세요.", "1. 칵테일 셰이커에 얼음을 채웁니다.\n" +
+                "2. 셰이커에 진저비어, 신선한 레몬 주스, 신선한 오렌지 주스, 슈가시럽을 넣습니다.\n" +
+                "3. 혼합물을 힘차게 흔들어 풍미를 결합하고 재료를 식힙니다.\n" +
+                "4. 얼음을 채운 하이볼 글라스에 혼합물을 걸러냅니다.\n" +
+                "5. 클럽 소다 또는 탄산수로 잔을 채웁니다.\n" +
+                "6. 칵테일을 부드럽게 저어 재료를 섞습니다.\n" +
+                "7. 레몬 또는 오렌지 슬라이스로 장식합니다.\n" +
+                "8. Citrus Fizz의 상쾌하고 시트러스 향을 서빙하고 즐기십시오!", "https://i.imgur.com/ILvcDh2.png");
+        cocktailRepository.save(시트러스_피즈);
+        Ingredient 레몬_주스 = new Ingredient("레몬 주스");
+        Ingredient 시럽 = new Ingredient("시럽");
+        Ingredient 클럽_소다 = new Ingredient("클럽 소다");
+        Ingredient 탄산수 = new Ingredient("탄산수");
+        Ingredient 장식용_레몬 = new Ingredient("장식용 레몬");
+        ingredientRepository.save(레몬_주스);
+        ingredientRepository.save(시럽);
+        ingredientRepository.save(클럽_소다);
+        ingredientRepository.save(탄산수);
+        ingredientRepository.save(장식용_레몬);
+        cocktailTagRepository.save(new CocktailTag(시트러스_피즈, 달콤한));
+        cocktailTagRepository.save(new CocktailTag(시트러스_피즈, 상큼한));
+        ingredientCocktailRepository.save(new IngredientCocktail(진저비어, 시트러스_피즈, "3/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬_주스, 시트러스_피즈, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(오렌지주스, 시트러스_피즈, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(시럽, 시트러스_피즈, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(클럽_소다, 시트러스_피즈, "기호에 맞게"));
+        ingredientCocktailRepository.save(new IngredientCocktail(장식용_레몬, 시트러스_피즈, "1개"));
+
+        Cocktail 매직_애플 = new Cocktail("매직 애플", "Magic Apple 무알코올 칵테일은 사과의 에센스를 마술적이고 매혹적인 방식으로 포착한 유쾌하고 상쾌한 음료입니다. 이 매혹적인 칵테일은 상큼한 시트러스 향과 사과의 달콤하고 아삭아삭한 맛이 어우러져 있습니다. 스파클링 워터를 얹어 은은한 거품을 선사합니다. 얼음과 함께 제공되는 이 마법의 영약은 생동감 있고 균형 잡힌 프로필로 입맛을 자극합니다. 즐겁고 매혹적인 음료를 찾는 사람들에게 완벽한 Magic Apple Cocktail은 한 모금 마실 때마다 풍미 가득한 마법을 선사합니다.", "1. 잔에 얼음을 채웁니다.\n" +
+                "2. 유리잔에 사과 주스를 붓고 4분의 3 정도 채웁니다.\n" +
+                "3. 유리잔에 신선한 라임 주스를 짜 넣습니다. 선호하는 산도에 따라 양을 조절하세요.\n" +
+                "4. 원하는 경우 칵테일을 달게 하기 위해 간단한 시럽을 약간 추가합니다. 취향에 따라 양을 조절하세요.\n" +
+                "5. 유리잔에 탄산수나 소다를 붓고 섞을 수 있도록 약간의 공간을 남겨둡니다.\n" +
+                "모든 맛이 섞이도록 부드럽게 저어줍니다.\n" +
+                "6. 선택적으로 시각적인 매력을 위해 라임 조각이나 사과 조각으로 장식합니다.", "https://i.imgur.com/RIBr6jn.jpg");
+        cocktailRepository.save(매직_애플);
+        Ingredient 사과_주스 = new Ingredient("사과 주스");
+        Ingredient 레몬즙 = new Ingredient("레몬즙");
+        Ingredient 장식용_사과_슬라이스 = new Ingredient("장식용 사과 슬라이스");
+        ingredientRepository.save(사과_주스);
+        ingredientRepository.save(레몬즙);
+        ingredientRepository.save(장식용_사과_슬라이스);
+
+        cocktailTagRepository.save(new CocktailTag(매직_애플, 청량한));
+        ingredientCocktailRepository.save(new IngredientCocktail(사과_주스, 매직_애플, "4온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬즙, 매직_애플, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(시럽, 매직_애플, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(탄산수, 매직_애플, "기호에 맞게"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 매직_애플, "적당량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(장식용_사과_슬라이스, 매직_애플, "1개"));
+
+        Cocktail 베리_블레스크 = new Cocktail("베리 블레스크", "Berry Burlesque 칵테일은 다양한 베리들이 어우러진 새콤달콤한 맛으로 경쾌한 무드를 느끼게 해주는 칵테일입니다.", "1. 블랙베리 리큐어, 아몬드 시럽, 라즈베리 주스, 레몬 주스를 넣고 섞습니다.\n" +
+                "2. 해당 혼합물을 탄산의 얼음이 담긴 글래스에 부어 줍니다.\n" +
+                "3. 소다수를 천천히 부어 줍니다.\n" +
+                "4. 글래스를 조심하며 섞어준 다음, 블랙베리와 라즈베리를 장식하여 완성합니다.", "https://i.imgur.com/1Fpzh9u.jpg");
+        cocktailRepository.save(베리_블레스크);
+        Tag 새콤달콤한 = new Tag("새콤달콤한");
+        tagRepository.save(새콤달콤한);
+        Ingredient 블랙베리_리큐어 = new Ingredient("블랙베리 리큐어");
+        Ingredient 아몬드_시럽 = new Ingredient("아몬드 시럽");
+        Ingredient 라즈베리_주스 = new Ingredient("라즈베리 주스");
+        Ingredient 블랙_베리 = new Ingredient("블랙 베리");
+        ingredientRepository.save(블랙베리_리큐어);
+        ingredientRepository.save(아몬드_시럽);
+        ingredientRepository.save(라즈베리_주스);
+        ingredientRepository.save(블랙_베리);
+
+        cocktailTagRepository.save(new CocktailTag(베리_블레스크, 새콤달콤한));
+        cocktailTagRepository.save(new CocktailTag(베리_블레스크, 상쾌한));
+        ingredientCocktailRepository.save(new IngredientCocktail(블랙베리_리큐어, 베리_블레스크, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(아몬드_시럽, 베리_블레스크, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라즈베리_주스, 베리_블레스크, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬_주스, 베리_블레스크, "1/4온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(소다수, 베리_블레스크, "1/2컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 베리_블레스크, "적당량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(블랙_베리, 베리_블레스크, "4개"));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+        new Cocktail("", "", "", "");
+        cocktailRepository.save();
+        new Tag("");
+        new Tag("");
+        tagRepository.save();
+        tagRepository.save();
+        new Ingredient("");
+        ingredientRepository.save();
+        cocktailTagRepository.save(new CocktailTag(, ));
+        cocktailTagRepository.save(new CocktailTag(, ));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+
+
     }
 }
-
