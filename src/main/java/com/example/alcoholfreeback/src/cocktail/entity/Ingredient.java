@@ -14,16 +14,21 @@ import java.util.List;
 @Entity
 public class Ingredient extends BaseEntity {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "ingredient_id")
     private Long id;
     private String name;
+    private String description;
+    private String imgUrl;
 
     @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
     private List<IngredientCocktail> cocktails = new ArrayList<>();
 
-    public Ingredient(String name, List<IngredientCocktail> cocktails) {
+    public Ingredient(String name, String description, String imgUrl, List<IngredientCocktail> cocktails) {
         this.name = name;
+        this.description = description;
         this.cocktails = cocktails;
+        this.imgUrl = imgUrl;
     }
 }
