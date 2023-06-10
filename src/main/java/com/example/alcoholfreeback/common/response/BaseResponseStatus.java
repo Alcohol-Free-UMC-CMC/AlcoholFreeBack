@@ -35,7 +35,7 @@ public enum BaseResponseStatus {
     NOT_FIND_USER(false,HttpStatus.NOT_FOUND.value(),"일치하는 유저가 없습니다."),
     INVALID_OAUTH_TYPE(false, HttpStatus.BAD_REQUEST.value(), "알 수 없는 소셜 로그인 형식입니다."),
 
-
+    NOT_FOUND_COCKTAIL(false, HttpStatus.NOT_FOUND.value(), "칵테일 정보가 존재하지 않습니다."),
 
     /**
      * 500 :  Database, Server 오류
