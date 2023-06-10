@@ -2,6 +2,7 @@ package com.example.alcoholfreeback.utils;
 
 import com.example.alcoholfreeback.src.cocktail.entity.*;
 import com.example.alcoholfreeback.src.cocktail.repository.*;
+import com.example.alcoholfreeback.src.guide.BaseIngredientRepository;
 import com.example.alcoholfreeback.src.guide.ToolRepository;
 import com.example.alcoholfreeback.src.guide.entity.BaseIngredient;
 import com.example.alcoholfreeback.src.guide.entity.Tool;
@@ -20,6 +21,7 @@ public class DataLoader implements ApplicationRunner {
     private final IngredientRepository ingredientRepository;
     private final IngredientCocktailRepository ingredientCocktailRepository;
     private final ToolRepository toolRepository;
+    private final BaseIngredientRepository baseIngredientRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -46,12 +48,24 @@ public class DataLoader implements ApplicationRunner {
         Tool 믹싱글라스 = new Tool("믹싱 글라스", "쉽게 잘 섞이는 재료를 만들거나, 잔으로 직접 만들 수 없는 모양의 칵테일 잔을 쓸 때 사용합니다. 또한 얼음이 없는 시원한 칵테일을 만들 때도 유용합니다. 냉각이나 희석되는 정도를 " +
                 "쉐이커보다 섬세하게 조절할 수 있습니다.",
                 "//i.namu.wiki/i/eVdwlRr1xaa6QgXjnwHVfkwFxI6mw3Vv5CdyVKjITweMoyR6V5mQNmJccxwGQnBi-Kuk6CxqfdkPVnZrGxw37FNJbOXM3yO2QpHbS9g1dzYjChIBLIb2dw9V3Q_hs-DscpVkt_hWmqbKIUEzbpnPvw.webp");
+        toolRepository.save(코블러쉐이커);
+        toolRepository.save(보스턴쉐이커);
+        toolRepository.save(지거);
+        toolRepository.save(바스푼);
+        toolRepository.save(믹싱글라스);
 
         BaseIngredient lime = new BaseIngredient("라임 주스", "모히또에 빼놓을 수 없는 재료입니다. 2020년경 부터는 수입사들이 많아져서 남미, 베트남산 라임이 들어오기 때문에 웬만한 바에서 평균 1만~2만원 사이 라임베이스 칵테일에는 라임을 씁니다. 물론 냉동라임, 생라임 이렇게 들어오기 때문에 주문전에 한번 바텐더에게 물어보는 것도 좋습니다.", "https://i.imgur.com/ySaEpbi.jpg");
         BaseIngredient coconut_milk = new BaseIngredient("코코넛밀크", "코코넛 밀크는 무알콜 칵테일에 기분 좋은 열대성 트위스트를 더할 수 있는 크리미하고 풍부한 재료입니다. 무알코올 칵테일에 크리미한 질감과 열대 지방의 감촉을 선사하며, 그 맛을 풍부하게 하고 벨벳 같은 음주 경험을 만들어냅니다. 모든 한 모금에서 이국적인 맛을 제공하면서 광범위한 무알코올 칵테일 창작을 가능하게 합니다.", "https://i.imgur.com/T1s5MS9.jpg");
         BaseIngredient club_sodar = new BaseIngredient("클럽소다", "탄산수 또는 소다수로도 알려진 클럽 소다는 칵테일 분야에서 흔히 사용되는 성분입니다. 다양한 음료에 상쾌함과 거품의 요소를 더해주는 탄산이 맑은 음료입니다. 전반적으로 클럽 소다는 거품, 희석 및 기분 좋은 질감을 제공하여 칵테일에 활기차고 상쾌한 요소를 더합니다. 다양한 음료에 사용할 수 있는 다용도 믹서로 가볍고 발포성 있는 터치를 제공하여 전반적인 맛과 경험을 향상시킵니다.", "https://i.imgur.com/WaSHcII.jpg");
         BaseIngredient mint = new BaseIngredient("민트", "전반적으로 민트 잎은 칵테일에 밝고 상쾌한 요소를 추가하는 능력으로 높이 평가됩니다. 그들은 다양한 재료를 보완하는 시원한 허브 풍미와 향을 제공하여 믹솔로지스트와 칵테일 애호가 모두에게 인기 있는 선택이 됩니다.", "https://i.imgur.com/DemcfoJ.jpg");
         BaseIngredient pannel = new BaseIngredient("펜넬", "무알코올 칵테일에 초본 향과 약간 달콤한 향을 더해 전체적인 맛 경험에 깊이와 복합성을 부여합니다. 창의적인 조합을 탐색하고 시각적으로 매력적이고 맛있는 무알콜 목테일을 만들 수 있습니다.", "https://i.imgur.com/DemcfoJ.jpg");
+
+        baseIngredientRepository.save(lime);
+        baseIngredientRepository.save(coconut_milk);
+        baseIngredientRepository.save(club_sodar);
+        baseIngredientRepository.save(mint);
+        baseIngredientRepository.save(pannel);
+
 
         Cocktail 애프터글로우 = new Cocktail("애프터 글로우", "애프터 글로우 칵테일은 매우 쉬운 만드는 방법과 밝은 오렌지색으로 빛나는 아름다운 외모로 유명합니다.", "1. 칵테일 샤케에 오렌지 주스, 크랜베리 주스, 코코넛 크림을 담습니다.\n" +
                 "2. 얼음을 추가한 후, 쉐이크합니다.\n" +

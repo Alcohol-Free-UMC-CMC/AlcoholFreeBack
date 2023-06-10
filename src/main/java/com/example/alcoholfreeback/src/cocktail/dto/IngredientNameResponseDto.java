@@ -2,7 +2,11 @@ package com.example.alcoholfreeback.src.cocktail.dto;
 
 import com.example.alcoholfreeback.src.cocktail.entity.Ingredient;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 public class IngredientNameResponseDto {
     private String name;
 

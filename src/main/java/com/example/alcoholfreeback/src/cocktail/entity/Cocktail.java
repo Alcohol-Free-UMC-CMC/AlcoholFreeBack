@@ -18,7 +18,9 @@ public class Cocktail extends BaseEntity {
     @Column(name = "cocktail_id")
     private Long id;
     private String name;
+    @Column(length = 1000)
     private String description;
+    @Column(length = 1000)
     private String recipe;
     private String imageUrl;
     private Long views;
