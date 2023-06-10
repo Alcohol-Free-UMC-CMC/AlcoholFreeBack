@@ -1,10 +1,12 @@
 package com.example.alcoholfreeback.src.recommend;
 
+import com.example.alcoholfreeback.src.recommend.entity.Recommend;
 import com.example.alcoholfreeback.src.recommend.model.PostRecommendReq;
 import com.example.alcoholfreeback.src.recommend.model.PostRecommendRes;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,7 @@ public class RecommendService {
     @Value("${chatgpt.api-key}")
     private String token;
 
+    @Autowired
     public RecommendService(RecommendRepository recommendRepository) {
         this.recommendRepository = recommendRepository;
     }
@@ -31,7 +34,7 @@ public class RecommendService {
         HttpURLConnection connection = null;
         String parameters = "{\"model\": \"gpt-3.5-turbo\", " +
                 "\"messages\": [{\"role\": \"user\", " +
-                    "\"content\": \"Please explain the cocktail in korean that can be made with the following ingredients ```"+recommendReq.getIngredients().toString()+"``` rewrite those instructions in the following format: - cocktail-name : \\n description : \"" +
+                    "\"content\": \"Please explain the recipe of cocktail in korean that can be made with the following ingredients ```"+recommendReq.getIngredients().toString()+"``` in 500 characters\"" +
                 "}], " +
                     "\"temperature\": 0.7\n" +
                 "}";
@@ -80,9 +83,12 @@ public class RecommendService {
             ////
             int idx = returnData.indexOf("\"content\": \"");
             returnData = returnData.substring(idx+13).split("\"")[0];
+            String name = String.join(" ", recommendReq.getIngredients()) + " 칵테일";
 
+            Recommend recommend = new Recommend(name, returnData);
+            Long id = recommendRepository.save(recommend).getId();
 
-            return PostRecommendRes.builder().content(returnData).build();
+            return new PostRecommendRes(id, name, returnData);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -93,5 +99,7 @@ public class RecommendService {
                 connection.disconnect();
             }
         }
+
     }
+
 }
