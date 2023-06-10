@@ -28,7 +28,7 @@ public class CocktailService {
     public CocktailDetailDto getCocktailDetail(Long id) {
         Cocktail cocktail = cocktailRepository.findByIdFetch(id).orElseThrow(
                 () -> new BaseException(BaseResponseStatus.NOT_FOUND_COCKTAIL));
-
+        cocktail.plusViews();
         return new CocktailDetailDto(cocktail.getName(), cocktail.getImageUrl(), cocktail.getDescription(),
                 cocktail.getTags().stream().map(t -> t.getTag().getName()).collect(Collectors.toList()),
                 cocktail.getIngredients().stream().map(i -> new IngredientDto(i.getIngredient().getName(), i.getAmount())).collect(Collectors.toList()),
@@ -49,5 +49,13 @@ public class CocktailService {
             return Collections.emptyList();
         }
         return cocktails;
+    }
+
+    public List<CocktailDto> getMyCocktails(List<Long> cocktailIds) {
+        List<Cocktail> cocktails = cocktailRepository.findByIds(cocktailIds);
+        if (cocktails == null || cocktails.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return cocktails.stream().map(CocktailDto::new).collect(Collectors.toList());
     }
 }

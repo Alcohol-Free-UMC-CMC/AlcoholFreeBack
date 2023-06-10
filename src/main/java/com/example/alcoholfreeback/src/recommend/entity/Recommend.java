@@ -19,6 +19,7 @@ public class Recommend extends BaseEntity {
     @Column(name = "recommend_id")
     private Long id;
     private String name;
+    @Column(length = 1000)
     private String description;
 
     public Recommend(String name, String description) {

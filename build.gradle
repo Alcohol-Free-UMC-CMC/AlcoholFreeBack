@@ -21,7 +21,6 @@ repositories {
 dependencies {
     implementation 'org.jetbrains:annotations:23.0.0'
 
-
     // Spring Boot Starter
     testImplementation ('org.springframework.boot:spring-boot-starter-test')
 
@@ -31,7 +30,7 @@ dependencies {
     annotationProcessor ('org.projectlombok:lombok:1.18.24')
 
     // DB
-//    runtimeOnly ('mysql:mysql-connector-java') //mysql8
+    runtimeOnly ('mysql:mysql-connector-java')
     //runtimeOnly 'mysql:mysql-connector-java:5.1.47' //mysql5
     runtimeOnly 'com.h2database:h2'
     implementation ('org.springframework.boot:spring-boot-starter-jdbc')

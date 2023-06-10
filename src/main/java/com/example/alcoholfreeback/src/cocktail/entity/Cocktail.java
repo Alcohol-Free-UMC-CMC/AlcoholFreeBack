@@ -23,10 +23,10 @@ public class Cocktail extends BaseEntity {
     private String imageUrl;
     private Long views;
 
-    @OneToMany(mappedBy = "cocktail", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cocktail", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<IngredientCocktail> ingredients = new ArrayList<>();
 
-    @OneToMany(mappedBy = "cocktail", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cocktail", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<CocktailTag> tags = new ArrayList<>();
 
     public Cocktail(String name, String description, String recipe, String imageUrl) {

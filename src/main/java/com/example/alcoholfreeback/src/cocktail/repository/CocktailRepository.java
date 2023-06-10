@@ -15,4 +15,7 @@ public interface CocktailRepository extends JpaRepository<Cocktail, Long> {
     Optional<Cocktail> findByIdFetch(@Param("id") Long id);
 
     List<Cocktail> findAllByOrderByViewsDesc();
+
+    @Query("SELECT c FROM Cocktail c WHERE c.id IN :ids")
+    List<Cocktail> findByIds(@Param("ids") List<Long> ids);
 }

@@ -21,7 +21,7 @@ public class Tag extends BaseEntity {
 
     private String name;
 
-    @OneToMany(mappedBy = "tag", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "tag", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<CocktailTag> cocktails = new ArrayList<>();
 
     public Tag(String name) {
