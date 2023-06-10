@@ -14,7 +14,8 @@ import java.util.List;
 @Entity
 public class Ingredient extends BaseEntity {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "ingredient_id")
     private Long id;
     private String name;
