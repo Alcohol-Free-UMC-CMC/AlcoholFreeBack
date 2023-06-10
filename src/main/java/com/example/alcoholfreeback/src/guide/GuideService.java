@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,8 +24,8 @@ public class GuideService {
 
     public List<ToolResponseDto> allTools() {
         List<Tool> tools = toolRepository.findAll();
-        if (tools.isEmpty())
-            throw new BaseException(BaseResponseStatus.EMPTY_LIST);
+        if (tools == null || tools.isEmpty())
+            return Collections.emptyList();
         return tools.stream().map(ToolResponseDto::from).collect(Collectors.toList());
     }
 
@@ -38,8 +39,8 @@ public class GuideService {
 
     public List<IngredientResponseDto> allIngredients() {
         List<Ingredient> ingredients = ingredientRepository.findAll();
-        if (ingredients.isEmpty())
-            throw new BaseException(BaseResponseStatus.EMPTY_LIST);
+        if (ingredients == null || ingredients.isEmpty())
+            return Collections.emptyList();
         return ingredients.stream().map(IngredientResponseDto::from).collect(Collectors.toList());
     }
 

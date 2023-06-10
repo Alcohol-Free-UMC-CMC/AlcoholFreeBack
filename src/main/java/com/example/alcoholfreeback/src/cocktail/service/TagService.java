@@ -1,7 +1,5 @@
 package com.example.alcoholfreeback.src.cocktail.service;
 
-import com.example.alcoholfreeback.common.exceptions.BaseException;
-import com.example.alcoholfreeback.common.response.BaseResponseStatus;
 import com.example.alcoholfreeback.src.cocktail.dto.TagNameResponseDto;
 import com.example.alcoholfreeback.src.cocktail.entity.Tag;
 import com.example.alcoholfreeback.src.cocktail.repository.TagRepository;
@@ -9,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,8 +19,8 @@ public class TagService {
 
     public List<TagNameResponseDto> allTags() {
         List<Tag> tags = tagRepository.findAll();
-        if (tags.isEmpty())
-            throw new BaseException(BaseResponseStatus.EMPTY_LIST);
+        if (tags == null || tags.isEmpty())
+            return Collections.emptyList();
         return tags.stream().map(TagNameResponseDto::from).collect(Collectors.toList());
     }
 }

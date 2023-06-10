@@ -27,7 +27,11 @@ public class QIngredient extends EntityPathBase<Ingredient> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
+    public final StringPath description = createString("description");
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public final StringPath imgUrl = createString("imgUrl");
 
     public final StringPath name = createString("name");
 
