@@ -415,39 +415,81 @@ public class DataLoader implements ApplicationRunner {
         ingredientCocktailRepository.save(new IngredientCocktail(물, 레몬그라스_자스민_아이스티, "1컵"));
         ingredientCocktailRepository.save(new IngredientCocktail(얼음, 레몬그라스_자스민_아이스티, "1컵"));
         ingredientCocktailRepository.save(new IngredientCocktail(시럽, 레몬그라스_자스민_아이스티, "기호에 맞게"));
-//
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
 
+        Cocktail 로즈마리_블루베리_스매쉬 = new Cocktail("로즈마리 블루베리 스매쉬", "Rosemary Blueberry Smash 논알콜 칵테일은 블루베리와 향긋한 로즈메리의 조화로운 맛이 독특한 매력을 발산하는 음료입니다. 과일과 허브의 맛이 시원하게 어우러져 여름철 파티나 여유로운 오후 티타임에 적합한 칵테일입니다.", "1. 칵테일 새커에 블루베리와 로즈메리를 넣고 잘 으깨줍니다.\n" +
+                "2. 레몬 주스와 설탕 시럽을 새커에 넣어줍니다.\n" +
+                "3. 얼음을 새커에 채운 다음, 잘 저어 섞어줍니다.\n" +
+                "4. 글래스에 얼음을 채우고, 섞은 음료를 건져서 부어줍니다.\n" +
+                "5. 탄산수를 천천히 부어주어 무르익게 만들어 줍니다.\n" +
+                "6. 블루베리와 로즈메리로 장식하여 완성합니다.", "https://i.imgur.com/bsPxgUq.jpg");
+        cocktailRepository.save(로즈마리_블루베리_스매쉬);
+        tagRepository.save(향긋한);
+        tagRepository.save(상큼한);
+        tagRepository.save(청량한);
+        Ingredient 로즈메리 = new Ingredient("로즈메리");
+        Ingredient 설탕_시럽 = new Ingredient("설탕 시럽");
+        ingredientRepository.save(블루베리);
+        ingredientRepository.save(로즈메리);
+        ingredientRepository.save(레몬_주스);
+        ingredientRepository.save(설탕_시럽);
+        ingredientRepository.save(탄산수);
+        ingredientRepository.save(얼음);
+        cocktailTagRepository.save(new CocktailTag(로즈마리_블루베리_스매쉬, 향긋한));
+        cocktailTagRepository.save(new CocktailTag(로즈마리_블루베리_스매쉬, 상큼한));
+        cocktailTagRepository.save(new CocktailTag(로즈마리_블루베리_스매쉬, 청량한));
+        ingredientCocktailRepository.save(new IngredientCocktail(블루베리, 로즈마리_블루베리_스매쉬, "1/4컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(로즈메리, 로즈마리_블루베리_스매쉬, "1개"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬_주스, 로즈마리_블루베리_스매쉬, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(설탕_시럽, 로즈마리_블루베리_스매쉬, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(탄산수, 로즈마리_블루베리_스매쉬, "2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 로즈마리_블루베리_스매쉬, "1컵"));
+
+        Cocktail 로즈_피즈 = new Cocktail("로즈 피즈", "Rose Fizz 논알콜 칵테일은 로즈 시럽과 청량한 탄산수가 어우러진 아름다운 논알콜 버전의 로즈 피즈입니다. 우아한 꽃향과 청량한 느낌이 특징인 이 음료는 다양한 자리에서 즐길 수 있는 리프레싱한 음료입니다.", "1. 글래스에 얼음을 채운 다음 로즈 시럽과 레몬 주스를 부어줍니다.\n" +
+                "2. 설탕 시럽을 생략하거나, 기호에 맞게 추가하여 맛을 조절합니다.\n" +
+                "3. 탄산수를 천천히 부어주고 잔 안의 내용물을 잘 섞어줍니다.\n" +
+                "4. 장미잎으로 장식하여 완성합니다.", "https://i.imgur.com/gb8YjPn.jpg");
+        cocktailRepository.save(로즈_피즈);
+        tagRepository.save(청량한);
+        tagRepository.save(상큼한);
+        Ingredient 로즈_시럽 = new Ingredient("로즈 시럽");
+        Ingredient 장미잎 = new Ingredient("장미잎");
+        ingredientRepository.save(로즈_시럽);
+        ingredientRepository.save(레몬_주스);
+        ingredientRepository.save(설탕_시럽);
+        ingredientRepository.save(탄산수);
+        ingredientRepository.save(얼음);
+        ingredientRepository.save(장미잎);
+        cocktailTagRepository.save(new CocktailTag(로즈_피즈, 청량한));
+        cocktailTagRepository.save(new CocktailTag(로즈_피즈, 상큼한));
+        ingredientCocktailRepository.save(new IngredientCocktail(로즈_시럽, 로즈_피즈, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬_주스, 로즈_피즈, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(설탕_시럽, 로즈_피즈, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(탄산수, 로즈_피즈, "4온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 로즈_피즈, "1컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(장미잎, 로즈_피즈, "장식용"));
+
+        Cocktail 라벤더_레모네이드 = new Cocktail("라벤더 레모네이드", "Lavender Lemonade 칵테일은 라벤더의 고요한 향이 어우러진 레모네이드 스타일의 음료로, 상큼함과 깊은 향이 독특한 매력을 선사하는 칵테일입니다. 이 음료는 여름철 간단한 파티나 오후의 티타임에 적합한 시원한 칵테일입니다.", "1. 글래스에 얼음을 채우고 라벤더 시럽, 레몬 주스를 부어줍니다.\n" +
+                "2. 물을 천천히 부어 잘 섞어줍니다.\n" +
+                "3. 라벤더 꽃으로 장식하여 완성합니다.", "https://i.imgur.com/5FIPQtC.jpg");
+        cocktailRepository.save(라벤더_레모네이드);
+        tagRepository.save(상큼한);
+        tagRepository.save(향긋한);
+        tagRepository.save(시원한);
+        Ingredient 라벤더_시럽 = new Ingredient("라벤더 시럽");
+        Ingredient 라벤더_꽃 = new Ingredient("라벤더 꽃");
+        ingredientRepository.save(라벤더_시럽);
+        ingredientRepository.save(레몬_주스);
+        ingredientRepository.save(물);
+        ingredientRepository.save(얼음);
+        ingredientRepository.save(라벤더_꽃);
+        cocktailTagRepository.save(new CocktailTag(라벤더_레모네이드, 상큼한));
+        cocktailTagRepository.save(new CocktailTag(라벤더_레모네이드, 향긋한));
+        cocktailTagRepository.save(new CocktailTag(라벤더_레모네이드, 시원한));
+        ingredientCocktailRepository.save(new IngredientCocktail(라벤더_시럽, 라벤더_레모네이드, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬_주스, 라벤더_레모네이드, "2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(물, 라벤더_레모네이드, "4온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 라벤더_레모네이드, "1컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라벤더_꽃, 라벤더_레모네이드, "장식용"));
 
     }
 }
