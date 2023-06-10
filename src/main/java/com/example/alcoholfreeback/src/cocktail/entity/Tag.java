@@ -14,26 +14,17 @@ import java.util.List;
 @Entity
 public class Tag extends BaseEntity {
 
-    enum Category {
-        FLAVOR, COLOR, MOOD;
-    }
-
     @Id
     @GeneratedValue
     @Column(name = "tag_id")
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private Category category;
-
     private String name;
 
-    @OneToMany(mappedBy = "tag", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "tag", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<CocktailTag> cocktails = new ArrayList<>();
 
-    public Tag(Category category, String name, List<CocktailTag> cocktails) {
-        this.category = category;
+    public Tag(String name) {
         this.name = name;
-        this.cocktails = cocktails;
     }
 }

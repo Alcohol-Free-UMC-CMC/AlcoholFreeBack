@@ -54,7 +54,7 @@ public class CocktailController {
             value = "찜목록 칵테일 조회",
             notes = "찜목록(나의 레시피)에 있는 칵테일 조회"
     )
-    @GetMapping("/{cocktail_id}")
+    @GetMapping("/myRecipe")
     public BaseResponse<List<CocktailDto>> getMyCocktails(@RequestBody CocktailIdDto cocktailIdDto) {
         return new BaseResponse<>(cocktailService.getMyCocktails(cocktailIdDto.getCocktailIds()));
     }

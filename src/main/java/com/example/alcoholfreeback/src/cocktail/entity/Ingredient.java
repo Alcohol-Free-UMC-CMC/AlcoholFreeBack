@@ -22,13 +22,12 @@ public class Ingredient extends BaseEntity {
     private String description;
     private String imgUrl;
 
-    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<IngredientCocktail> cocktails = new ArrayList<>();
 
-    public Ingredient(String name, String description, String imgUrl, List<IngredientCocktail> cocktails) {
+    public Ingredient(String name, String description, String imgUrl) {
         this.name = name;
         this.description = description;
-        this.cocktails = cocktails;
         this.imgUrl = imgUrl;
     }
 }
