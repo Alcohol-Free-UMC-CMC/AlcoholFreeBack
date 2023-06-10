@@ -29,25 +29,24 @@ public class DataLoader implements ApplicationRunner {
                 "걸러져나오는 형태의 쉐이커입니다. 거품을 많이 내는 칵테일에 주로 쓰입니다. 쉐이커 바디에 얼음을 1/2~1/3 정도 채우고 재료를 넣습니다. 바디, 스트레이너, 캡 순서대로 닫아줍니다." +
                 " 캡을 마지막에 넣는 이유는 냉각으로 캡이 잘 열리지 않는 것을 최대한 방지할 수 있기 때문입니다. 한 쪽 엄지를 캡에 올리고, 다른 한 쪽의 검지와 중지는 바디 아래쪽을 댄 상태로 쉐이커를 고정합니다. " +
                 "10~15초 간 쉐이킹을 합니다. 다만, 코블러 쉐이커는 얼음이 빨리 녹아 희석이 다른 쉐이커에 더 된다는 단점이 있습니다.",
-                "https://cdn.shopify.com/s/files/1/0211/7300/products/usagi-heavyweight-cobbler-shaker-998044_2048x.jpg?v=1642102535");
+                "thttps://i.imgur.com/o4B9HPe.png");
 
         Tool 보스턴쉐이커 = new Tool("보스턴 쉐이커", "코블러 쉐이커로도 대부분의 칵테일을 만들 수 있긴 하지만, 보스턴 쉐이커도 하나쯤은 구비하고 있는 것이 좋습니다. " +
                 "용량이 큰 보온병이나 텀블러로 대체 가능하긴 하지만, 종종 크림이나 우유, 계란이 들어가는 칵테일을 만들 때는 꼭 필요한 도구입니다. " +
                 "특히 계란을 사용하는 칵테일은 보온병으로 만들다가 터질 수 있는 가능성이 매우 큽니다. 안에 공기가 더욱 많이 들어가기 때문에 조금 더 부드로운 칵테일을 만들 수 있습니다.",
-                "https://www.liquor.com/thmb/l9XU26RNguhM1no95eKibGPsF38=/fit-in/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cocktail-kingdom-leopold-weighted-shaking-tin-set-c9dab0851ce945d7a144e4e37f745b12.jpg");
-
+                "https://i.imgur.com/pDaJsz0.png");
         Tool 지거 = new Tool("지거", "정확한 계량을 위해 반드시 필요한 도구입니다. 산이 포함된 라임이나 레몬주스, 그리고 설탕시럽은 미세한 용량의 차이로도 맛을 크게 변화시키기에 홈텐딩에 빠질 수 없는 필수품입니다. " +
                 "효율성을 중시한다면 내부 안쪽에 계량선이 있는 것을 추천합니다. 다만, 이 또한 소주잔으로 대체할 수 있습니다.",
-                "https://i.pinimg.com/originals/31/a8/5b/31a85b5a9ddc0e97ec8b8d62cfa2d70c.jpg");
+                "https://i.imgur.com/IdYEw1F.png");
 
         Tool 바스푼 = new Tool("바 스푼", "바 스푼은 중간에 꼬여있는 부분의 견고함과 길이를 보고 고르는 것이 좋습니다. 스터 기법의 " +
                 "마티니 스타일의 칵테일을 제조할 시에 손가락의 기술에 이용하여 칵테일을 만들기 때문에 가운데 꼬여있는 트위스트 부분이 얼마나 견고한지가 중요하기 때문입니다. " +
                 "길이는 30~40cm 정도가 가장 적당합니다.",
-                "https://valleyvariety.com/products/stainless-steel-weighted-barspoon?variant=38028075630759&epik=dj0yJnU9dlFUYU1JTkNpZlN0M3Qzc0czVGM2M1hTZXpmVWtmY04mcD0wJm49dmxiLW9UV2lKcVFPSXVKd1owQVEwUSZ0PUFBQUFBR1NFcTZz");
+                "https://i.imgur.com/B7R9KVA.png");
 
         Tool 믹싱글라스 = new Tool("믹싱 글라스", "쉽게 잘 섞이는 재료를 만들거나, 잔으로 직접 만들 수 없는 모양의 칵테일 잔을 쓸 때 사용합니다. 또한 얼음이 없는 시원한 칵테일을 만들 때도 유용합니다. 냉각이나 희석되는 정도를 " +
                 "쉐이커보다 섬세하게 조절할 수 있습니다.",
-                "//i.namu.wiki/i/eVdwlRr1xaa6QgXjnwHVfkwFxI6mw3Vv5CdyVKjITweMoyR6V5mQNmJccxwGQnBi-Kuk6CxqfdkPVnZrGxw37FNJbOXM3yO2QpHbS9g1dzYjChIBLIb2dw9V3Q_hs-DscpVkt_hWmqbKIUEzbpnPvw.webp");
+                "https://i.imgur.com/0eCcQjn.png");
         toolRepository.save(코블러쉐이커);
         toolRepository.save(보스턴쉐이커);
         toolRepository.save(지거);
@@ -310,69 +309,67 @@ public class DataLoader implements ApplicationRunner {
         ingredientCocktailRepository.save(new IngredientCocktail(얼음, 베리_블레스크, "적당량"));
         ingredientCocktailRepository.save(new IngredientCocktail(블랙_베리, 베리_블레스크, "4개"));
 
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        Cocktail 실리진저 = new Cocktail("실리 진저", "Shirley Ginger 칵테일은 진저 에일의 풍미와 약간의 석류즙 및 감귤류가 결합된 유쾌하고 상쾌한 무알코올 음료입니다.", "1. 잔에 얼음을 채웁니다.\n" +
+                "2. 진저에일을 유리잔에 붓고 상단에 3. 약간의 공간을 남겨둡니다.\n" +
+                "4. 진저에일에 그레나딘 시럽을 조금 넣습니다. 금액은 개인 취향에 따라 조정될 수 있습니다.\n" +
+                "5. 신선한 레몬 또는 라임 주스를 짜서 맛보십시오. 소량으로 시작하여 선호하는 산도에 따라 조절하십시오.\n" +
+                "6. 맛이 잘 섞이도록 부드럽게 저어줍니다.\n" +
+                "7. 선택적으로 마라스키노 체리나 레몬 또는 라임 슬라이스로 장식합니다.", "https://i.imgur.com/yehMVLY.jpg");
+        cocktailRepository.save(실리진저);
+        Tag 알싸한 = new Tag("알싸한");
+        tagRepository.save(알싸한);
+        Ingredient 진저에일 = new Ingredient("진저에일");
+        Ingredient 그레나딘_시럽 = new Ingredient("그레나딘 시럽");
+        Ingredient  마라스키노_체리= new Ingredient("마라스키노 체리");
+        ingredientRepository.save(진저에일);
+        ingredientRepository.save(그레나딘_시럽);
+        ingredientRepository.save(마라스키노_체리);
+        cocktailTagRepository.save(new CocktailTag(실리진저, 알싸한));
+        ingredientCocktailRepository.save(new IngredientCocktail(진저에일, 실리진저, "4온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(그레나딘_시럽, 실리진저, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(,마라스키노_체리 실리진저, "장식용"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라임_주스, 실리진저, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 실리진저, "적당량"));
 
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        Cocktail 와일드캣_쿨러 = new Cocktail("와일드캣 출러", "Wildcat Cooler 칵테일은 상큼하고 시원한 과일향이 돋보이는 칵테일로 더운 여름철에 즐겨 마시는 음료입니다. 시트러스, 베리, 진저에일의 풍미가 어우러진 유쾌하고 상쾌한 무알코올 칵테일입니다.", "1. 잔에 얼음을 채웁니다.\n" +
+                "2. 잔에 크랜베리 \u200B\u200B주스를 붓고 4분의 3 정도 채웁니다.\n" +
+                "3. 유리잔에 오렌지 주스를 조금 넣습니다. 시트러스 향에 대한 선호도에 따라 양을 조절하세요.\n" +
+                "4. 원하는 경우 소량의 단순 시럽을 추가하여 칵테일을 달게 합니다. 티스푼으로 시작하여 취향에 따라 조절하세요.\n" +
+                "5. 진저에일로 잔을 채우고 섞을 수 있도록 상단에 약간의 공간을 남겨 둡니다.\n" +
+                "6. 모든 맛이 섞이도록 부드럽게 저어줍니다.\n" +
+                "7. 필요에 따라 레몬 또는 라임 웨지로 칵테일을 장식합니다.", "https://i.imgur.com/MBX52KA.jpg");
+        cocktailRepository.save(와일드캣_쿨러);
+
+        cocktailTagRepository.save(new CocktailTag(와일드캣_쿨러, 상큼한));
+        cocktailTagRepository.save(new CocktailTag(와일드캣_쿨러, 청량한));
+        cocktailTagRepository.save(new CocktailTag(와일드캣_쿨러, 시원한));
+        ingredientCocktailRepository.save(new IngredientCocktail(크랜베리주스, 와일드캣_쿨러, "2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(오렌지주스, 와일드캣_쿨러, "1온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(진저에일, 와일드캣_쿨러, "4온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(시럽, 와일드캣_쿨러, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(장식용_레몬, 와일드캣_쿨러, "1개"));
+
+        Cocktail 시드립_스파이스_앤_토닉 = new Cocktail("시드립 스파이스 앤 토닉", "Seedlip Spice 94는 향긋한 향신료와 식물 성분을 혼합하여 만든 무알코올 증류주로, 클래식 진을 연상시키는 복합적인 풍미를 제공합니다. 토닉워터의 상큼함과 어우러져 상큼하고 세련된 음료로 언제든 즐길 수 있습니다. 유쾌하고 무알코올 칵테일 경험을 응원합니다!", "1. 잔에 얼음을 채웁니다.\n" +
+                "2. 얼음 위에 Seedlip Spice 94를 붓습니다.\n" +
+                "3. 잔에 프리미엄 토닉워터를 채웁니다. 음료의 강도에 대한 선호도에 따라 양을 조정하십시오.\n" +
+                "4. 재료가 잘 섞이도록 부드럽게 저어줍니다.\n" +
+                "5. 향과 풍미를 더하기 위해 약간의 오렌지 껍질이나 시나몬 스틱으로 장식합니다.\n" +
+                "6. 세련되고 향긋한 Seedlip Spice & Tonic 칵테일을 서빙하고 즐기십시오!", "https://i.imgur.com/H2LDW5Z.png");
+        cocktailRepository.save(시드립_스파이스_앤_토닉);
+        Ingredient 시드립_스파이스_94 = new Ingredient("시드립 스파이스 94");
+        Ingredient 토닉_워터 = new Ingredient("토닉워터");
+        Ingredient 장식용_오렌지_껍질 = new Ingredient("장식용 오렌지 껍질");
+        ingredientRepository.save(시드립_스파이스_94);
+        ingredientRepository.save(토닉_워터);
+        ingredientRepository.save(장식용_오렌지_껍질);
+        ingredientRepository.save(얼음);
+        cocktailTagRepository.save(new CocktailTag(시드립_스파이스_앤_토닉, 상큼한 ));
+        ingredientCocktailRepository.save(new IngredientCocktail(시드립_스파이스_94, 시드립_스파이스_앤_토닉, "2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(토닉_워터, 시드립_스파이스_앤_토닉, "4~6온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(장식용_오렌지_껍질, 시드립_스파이스_앤_토닉, "적당량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 시드립_스파이스_앤_토닉, "적당량"));
+
+
 //
 //        new Cocktail("", "", "", "");
 //        cocktailRepository.save();
