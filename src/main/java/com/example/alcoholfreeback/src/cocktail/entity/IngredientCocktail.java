@@ -17,11 +17,11 @@ public class IngredientCocktail extends BaseEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "ingredient_id")
+    @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "cocktail_id")
+    @JoinColumn(name = "cocktail_id")
     private Cocktail cocktail;
 
     public IngredientCocktail(Ingredient ingredient, Cocktail cocktail) {

@@ -17,11 +17,11 @@ public class CocktailTag extends BaseEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "cocktail_id")
+    @JoinColumn(name = "cocktail_id")
     private Cocktail cocktail;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "tag_id")
+    @JoinColumn(name = "tag_id")
     private Tag tag;
 
     public CocktailTag(Cocktail cocktail, Tag tag) {
