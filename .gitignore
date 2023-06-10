@@ -211,7 +211,7 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 # Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
+!gradle-wrapper.properties가
 
 # Cache of project
 .gradletasknamecache
@@ -228,3 +228,4 @@ gradle-app.setting
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,intellij,java,gradle
 /.idea/
+
