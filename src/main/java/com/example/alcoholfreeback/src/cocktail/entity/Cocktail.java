@@ -18,8 +18,10 @@ public class Cocktail extends BaseEntity {
     @Column(name = "cocktail_id")
     private Long id;
     private String name;
+    private String description;
     private String recipe;
     private String imageUrl;
+    private Long views;
 
     @OneToMany(mappedBy = "cocktail", fetch = FetchType.LAZY)
     private List<IngredientCocktail> ingredients = new ArrayList<>();
@@ -27,8 +29,15 @@ public class Cocktail extends BaseEntity {
     @OneToMany(mappedBy = "cocktail", fetch = FetchType.LAZY)
     private List<CocktailTag> tags = new ArrayList<>();
 
-    public Cocktail(String recipe, String imageUrl) {
+    public Cocktail(String name, String description, String recipe, String imageUrl) {
+        this.name = name;
+        this.description = description;
         this.recipe = recipe;
         this.imageUrl = imageUrl;
+        this.views = 0l;
+    }
+
+    public void plusViews() {
+        this.views += 1;
     }
 }
