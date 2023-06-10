@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 public class Tag extends BaseEntity {
 
-    private enum Category {
+    enum Category {
         FLAVOR, COLOR, MOOD;
     }
 

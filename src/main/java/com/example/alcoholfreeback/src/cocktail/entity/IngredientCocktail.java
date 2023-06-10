@@ -15,6 +15,7 @@ public class IngredientCocktail extends BaseEntity {
     @Id @GeneratedValue
     @Column(name = "ingredient_cocktail_id")
     private Long id;
+    private String amount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ingredient_id")
@@ -24,8 +25,9 @@ public class IngredientCocktail extends BaseEntity {
     @JoinColumn(name = "cocktail_id")
     private Cocktail cocktail;
 
-    public IngredientCocktail(Ingredient ingredient, Cocktail cocktail) {
+    public IngredientCocktail(Ingredient ingredient, Cocktail cocktail, String amount) {
         this.ingredient = ingredient;
         this.cocktail = cocktail;
+        this.amount = amount;
     }
 }
