@@ -82,7 +82,7 @@ public class RecommendService {
 
             ////
             int idx = returnData.indexOf("\"content\": \"");
-            returnData = returnData.substring(idx+13).split("\"")[0];
+            returnData = returnData.substring(idx+12).split("\"")[0];
             String name = String.join(" ", recommendReq.getIngredients()) + " 칵테일";
 
             Recommend recommend = new Recommend(name, returnData);
