@@ -22,8 +22,6 @@ public class QTag extends EntityPathBase<Tag> {
 
     public final com.example.alcoholfreeback.common.entity.QBaseEntity _super = new com.example.alcoholfreeback.common.entity.QBaseEntity(this);
 
-    public final EnumPath<Tag.Category> category = createEnum("category", Tag.Category.class);
-
     public final ListPath<CocktailTag, QCocktailTag> cocktails = this.<CocktailTag, QCocktailTag>createList("cocktails", CocktailTag.class, QCocktailTag.class, PathInits.DIRECT2);
 
     //inherited
