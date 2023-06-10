@@ -50,4 +50,12 @@ public class CocktailService {
         }
         return cocktails;
     }
+
+    public List<CocktailDto> getMyCocktails(List<Long> cocktailIds) {
+        List<Cocktail> cocktails = cocktailRepository.findByIds(cocktailIds);
+        if (cocktails == null || cocktails.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return cocktails.stream().map(CocktailDto::new).collect(Collectors.toList());
+    }
 }

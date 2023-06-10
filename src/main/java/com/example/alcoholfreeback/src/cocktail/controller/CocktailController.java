@@ -3,6 +3,7 @@ package com.example.alcoholfreeback.src.cocktail.controller;
 import com.example.alcoholfreeback.common.response.BaseResponse;
 import com.example.alcoholfreeback.src.cocktail.model.CocktailDetailDto;
 import com.example.alcoholfreeback.src.cocktail.model.CocktailDto;
+import com.example.alcoholfreeback.src.cocktail.model.CocktailIdDto;
 import com.example.alcoholfreeback.src.cocktail.model.CocktailSearchCond;
 import com.example.alcoholfreeback.src.cocktail.service.CocktailService;
 import io.swagger.annotations.*;
@@ -47,5 +48,14 @@ public class CocktailController {
     @GetMapping("/{cocktail_id}")
     public BaseResponse<CocktailDetailDto> getCocktail(@PathVariable("cocktail_id") Long id) {
         return new BaseResponse<>(cocktailService.getCocktailDetail(id));
+    }
+
+    @ApiOperation(
+            value = "찜목록 칵테일 조회",
+            notes = "찜목록(나의 레시피)에 있는 칵테일 조회"
+    )
+    @GetMapping("/{cocktail_id}")
+    public BaseResponse<List<CocktailDto>> getMyCocktails(@RequestBody CocktailIdDto cocktailIdDto) {
+        return new BaseResponse<>(cocktailService.getMyCocktails(cocktailIdDto.getCocktailIds()));
     }
 }
