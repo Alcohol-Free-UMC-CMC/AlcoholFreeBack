@@ -1,10 +1,7 @@
 package com.example.alcoholfreeback.src.cocktail.repository;
 
 import com.example.alcoholfreeback.common.entity.BaseEntity;
-import com.example.alcoholfreeback.src.cocktail.entity.Cocktail;
-import com.example.alcoholfreeback.src.cocktail.entity.QCocktail;
-import com.example.alcoholfreeback.src.cocktail.entity.QCocktailTag;
-import com.example.alcoholfreeback.src.cocktail.entity.QIngredient;
+import com.example.alcoholfreeback.src.cocktail.entity.*;
 import com.example.alcoholfreeback.src.cocktail.model.CocktailDto;
 import com.example.alcoholfreeback.src.cocktail.model.CocktailSearchCond;
 import com.querydsl.core.Tuple;
@@ -21,6 +18,7 @@ import java.util.stream.Collectors;
 import static com.example.alcoholfreeback.src.cocktail.entity.QCocktail.*;
 import static com.example.alcoholfreeback.src.cocktail.entity.QCocktailTag.*;
 import static com.example.alcoholfreeback.src.cocktail.entity.QIngredient.*;
+import static com.example.alcoholfreeback.src.cocktail.entity.QIngredientCocktail.*;
 import static com.example.alcoholfreeback.src.cocktail.entity.QTag.tag;
 
 @Repository
@@ -45,10 +43,12 @@ public class CocktailSearchRepository {
     }
 
     public List<CocktailDto> searchCocktailByAllCond(CocktailSearchCond cond) {
-        List<Cocktail> cocktails = queryFactory.select(cocktail)
+        List<Cocktail> cocktails = queryFactory.selectDistinct(cocktail)
                 .from(cocktail)
                 .innerJoin(cocktail.tags, cocktailTag).on()
                 .innerJoin(cocktailTag.tag, tag)
+                .innerJoin(cocktail.ingredients, ingredientCocktail)
+                .innerJoin(ingredientCocktail.ingredient, ingredient)
                 .where(keywordLike(cond.getKeyword()),
                         tagEq(cond.getTag()),
                         ingredientEq(cond.getIngredient()),

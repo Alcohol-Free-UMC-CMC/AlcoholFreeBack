@@ -16,6 +16,7 @@ public class Tool extends BaseEntity {
     @Column(name = "tool_id")
     private Long id;
     private String name;
+    @Column(length = 1000)
     private String description;
     private String imgUrl;
 
