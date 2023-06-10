@@ -1,6 +1,6 @@
 package com.example.alcoholfreeback.src.guide.dto;
 
-import com.example.alcoholfreeback.src.cocktail.entity.Ingredient;
+import com.example.alcoholfreeback.src.guide.entity.BaseIngredient;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,14 +14,14 @@ public class IngredientResponseDto {
     private String imgUrl;
 
     @Builder
-    private IngredientResponseDto(Long id, String name, String description, String imgUrl){
+    private IngredientResponseDto(Long id, String name, String description, String imgUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.imgUrl = imgUrl;
     }
 
-    public static IngredientResponseDto from(Ingredient ingredient){
+    public static IngredientResponseDto from(BaseIngredient ingredient) {
         return IngredientResponseDto.builder()
                 .id(ingredient.getId())
                 .name(ingredient.getName())

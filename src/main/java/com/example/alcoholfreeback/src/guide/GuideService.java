@@ -2,10 +2,9 @@ package com.example.alcoholfreeback.src.guide;
 
 import com.example.alcoholfreeback.common.exceptions.BaseException;
 import com.example.alcoholfreeback.common.response.BaseResponseStatus;
-import com.example.alcoholfreeback.src.cocktail.entity.Ingredient;
-import com.example.alcoholfreeback.src.cocktail.repository.IngredientRepository;
 import com.example.alcoholfreeback.src.guide.dto.IngredientResponseDto;
 import com.example.alcoholfreeback.src.guide.dto.ToolResponseDto;
+import com.example.alcoholfreeback.src.guide.entity.BaseIngredient;
 import com.example.alcoholfreeback.src.guide.entity.Tool;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class GuideService {
     private final ToolRepository toolRepository;
-    private final IngredientRepository ingredientRepository;
+    private final BaseIngredientRepository baseIngredientRepository;
 
     public List<ToolResponseDto> allTools() {
         List<Tool> tools = toolRepository.findAll();
@@ -38,14 +37,14 @@ public class GuideService {
     }
 
     public List<IngredientResponseDto> allIngredients() {
-        List<Ingredient> ingredients = ingredientRepository.findAll();
+        List<BaseIngredient> ingredients = baseIngredientRepository.findAll();
         if (ingredients == null || ingredients.isEmpty())
             return Collections.emptyList();
         return ingredients.stream().map(IngredientResponseDto::from).collect(Collectors.toList());
     }
 
     public IngredientResponseDto oneIngredient(Long id) {
-        Ingredient ingredient = ingredientRepository.findById(id).orElseThrow(
+        BaseIngredient ingredient = baseIngredientRepository.findById(id).orElseThrow(
                 () -> new BaseException(BaseResponseStatus.NOT_FIND_VALUE)
         );
 
