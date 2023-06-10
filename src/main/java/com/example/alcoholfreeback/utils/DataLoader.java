@@ -327,7 +327,7 @@ public class DataLoader implements ApplicationRunner {
         cocktailTagRepository.save(new CocktailTag(실리진저, 알싸한));
         ingredientCocktailRepository.save(new IngredientCocktail(진저에일, 실리진저, "4온스"));
         ingredientCocktailRepository.save(new IngredientCocktail(그레나딘_시럽, 실리진저, "1/2온스"));
-        ingredientCocktailRepository.save(new IngredientCocktail(,마라스키노_체리 실리진저, "장식용"));
+        ingredientCocktailRepository.save(new IngredientCocktail(마라스키노_체리, 실리진저, "장식용"));
         ingredientCocktailRepository.save(new IngredientCocktail(라임_주스, 실리진저, "1/2온스"));
         ingredientCocktailRepository.save(new IngredientCocktail(얼음, 실리진저, "적당량"));
 
@@ -370,38 +370,51 @@ public class DataLoader implements ApplicationRunner {
         ingredientCocktailRepository.save(new IngredientCocktail(얼음, 시드립_스파이스_앤_토닉, "적당량"));
 
 
-//
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//
-//        new Cocktail("", "", "", "");
-//        cocktailRepository.save();
-//        new Tag("");
-//        new Tag("");
-//        tagRepository.save();
-//        tagRepository.save();
-//        new Ingredient("");
-//        ingredientRepository.save();
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        cocktailTagRepository.save(new CocktailTag(, ));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
-//        ingredientCocktailRepository.save(new IngredientCocktail(, , ""));
+        Cocktail 버진_팔로마 = new Cocktail("버진 팔로마", "Virgin Paloma 칵테일은 전통적인 Paloma 칵테일에서 무알콜 버전으로 만들어진 음료로, 상큼한 자몽과 탄산이 어우러진 시원한 맛이 특징입니다.", "1. 칵테일 글래스 가장자리에 소금을 입혀둡니다.\n" +
+                "2. 글래스에 얼음을 채워줍니다.\n" +
+                "3. 자몽 주스, 라임 주스, 설탕 시럽을 글래스에 부어줍니다.\n" +
+                "4. 소다수를 천천히 부어줍니다.\n" +
+                "5. 음료를 부드럽게 젓어 섞어줍니다.\n" +
+                "6. 라임 조각을 장식하여 완성합니다.", "https://i.imgur.com/QsZ1nJm.jpg");
+        cocktailRepository.save(버진_팔로마);
+        Ingredient 자몽_주스 = new Ingredient("자몽 주스");
+        Ingredient 소금 = new Ingredient("소금");
+        Ingredient 라임_조각 = new Ingredient("라임 조각");
+        ingredientRepository.save(자몽_주스);
+        ingredientRepository.save(소금);
+        ingredientRepository.save(라임_조각);
+        cocktailTagRepository.save(new CocktailTag(버진_팔로마, 상큼한));
+        cocktailTagRepository.save(new CocktailTag(버진_팔로마, 시원한));
+        cocktailTagRepository.save(new CocktailTag(버진_팔로마, 청량한));
+        ingredientCocktailRepository.save(new IngredientCocktail(자몽_주스, 버진_팔로마, "3온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라임_주스, 버진_팔로마, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(시럽, 버진_팔로마, "1/2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(소금, 버진_팔로마, "소량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(소다수, 버진_팔로마, "2온스"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 버진_팔로마, "적당량"));
+        ingredientCocktailRepository.save(new IngredientCocktail(라임_조각, 버진_팔로마, "1개"));
+
+        Cocktail 레몬그라스_자스민_아이스티 = new Cocktail("레몬그라스 자스민 아이스티", "Lemongrass Jasmine Iced Tea는 레몬그라스의 상큼함과 자스민 향이 어우러진 시원한 아이스 티 칵테일입니다. 이 음료는 여름철 갈증 해소와 에너지 회복에 도움이 되는 리프레싱한 음료로 인기가 있습니다.", "1. 끓인 물에 자스민 티 티백과 레몬그라스를 넣어, 녹차가 약 3분이 지나 진한 녹색티 색이 될 때까지 우려냅니다.\n" +
+                "2. 티백과 레몬그라스를 건져 내고, 꿀 또는 설탕 시럽을 혼합액에 첨가하여 차 상태가 됩니다.\n" +
+                "3. 음료가 실온까지 식도록 기다립니다.\n" +
+                "4. 얼음이 잡힌 글래스에 음료를 부어주고, 레몬 처짐으로 완성합니다.", "https://i.imgur.com/bsPxgUq.jpg");
+        cocktailRepository.save(레몬그라스_자스민_아이스티);
+        Tag 향긋한 = new Tag("향긋한");
+        tagRepository.save(향긋한);
+        Ingredient 자스민_티 = new Ingredient("자스민 티");
+        Ingredient 레몬그라스 = new Ingredient("레몬그라스");
+        Ingredient 물 = new Ingredient("물");
+        ingredientRepository.save(자스민_티);
+        ingredientRepository.save(레몬그라스);
+        ingredientRepository.save(물);
+        cocktailTagRepository.save(new CocktailTag(레몬그라스_자스민_아이스티, 향긋한));
+        cocktailTagRepository.save(new CocktailTag(레몬그라스_자스민_아이스티, 시원한));
+        cocktailTagRepository.save(new CocktailTag(레몬그라스_자스민_아이스티, 상큼한));
+        ingredientCocktailRepository.save(new IngredientCocktail(자스민_티, 레몬그라스_자스민_아이스티, "2티백"));
+        ingredientCocktailRepository.save(new IngredientCocktail(레몬그라스, 레몬그라스_자스민_아이스티, "2조각"));
+        ingredientCocktailRepository.save(new IngredientCocktail(물, 레몬그라스_자스민_아이스티, "1컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(얼음, 레몬그라스_자스민_아이스티, "1컵"));
+        ingredientCocktailRepository.save(new IngredientCocktail(시럽, 레몬그라스_자스민_아이스티, "기호에 맞게"));
 //
 //        new Cocktail("", "", "", "");
 //        cocktailRepository.save();
