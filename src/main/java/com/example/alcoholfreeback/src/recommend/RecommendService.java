@@ -10,6 +10,9 @@ import com.example.alcoholfreeback.src.recommend.model.PostRecommendRes;
 import com.example.alcoholfreeback.src.recommend.model.RecommendDto;
 import lombok.RequiredArgsConstructor;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -85,17 +88,16 @@ public class RecommendService {
 
             //메소드 호출 완료 시 반환하는 변수에 버퍼 데이터 삽입 실시
             String returnData = sb.toString();
-            System.out.println("http 응답 데이터 : "+returnData);
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(returnData);
+            String description = (String) ((JSONObject) ((JSONObject) ((JSONArray) jsonObject.get("choices")).get(0)).get("message")).get("content");
 
-            ////
-            int idx = returnData.indexOf("\"content\": \"");
-            returnData = returnData.substring(idx+12).split("\"")[0];
             String name = String.join(" ", recommendReq.getIngredients()) + " 칵테일";
 
-            Recommend recommend = new Recommend(name, returnData);
+            Recommend recommend = new Recommend(name, description);
             Long id = recommendRepository.save(recommend).getId();
 
-            return new PostRecommendRes(id, name, returnData);
+            return new PostRecommendRes(id, name, description);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
